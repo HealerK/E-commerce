@@ -12,17 +12,16 @@
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css"
         href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
-    <!-- Font Awesome Icons -->
-    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
     <!-- Fonts -->
-    <link rel="stylesheet" 
-    href="{{ asset('https://fonts.googleapis.com/css?family=Nunito') }}">
+    <link rel="stylesheet" href="{{ asset('https://fonts.googleapis.com/css?family=Nunito') }}">
 
     <!-- Styles -->
-    <link id="pagestyle" href="{{ asset('frontend/css/material-dashboard.css?v=3.0.4') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
+    <link id="pagestyle" href="{{ asset('frontend/css/material-dashboard.css') }}" rel="stylesheet" />
 
 </head>
 
@@ -36,17 +35,28 @@
 
             @include('layouts.inc.footer')
         </div>
+
     </main>
 
 
     <!-- Scripts -->
-
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <script src="{{ asset('frontend/js/popper.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/js/plugins/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('frontend/js/plugins/smooth-scrollbar.min.js') }}"></script>
     <script src="{{ asset('frontend/js/plugins/chartjs.min.js') }}"></script>
     <script src="{{ asset('frontend/js/material-dashboard.min.js') }}"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
 </body>
 
 </html>
